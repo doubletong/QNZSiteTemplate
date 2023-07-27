@@ -4,10 +4,10 @@
 const autoprefixer = require("autoprefixer");
 const browserSync = require("browser-sync").create();
 const cssnano = require("cssnano");
-const del = require("del");
 const gulp = require("gulp");
-// const imagemin = require("gulp-imagemin");
-const imagemin = import('gulp-imagemin');
+const clean = require('gulp-clean');
+const imagemin = require("gulp-imagemin");
+// const imagemin = require('gulp-imagemin');
 const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
@@ -39,11 +39,12 @@ var bases = {
 // ---------------
 
 // Clean assets
-function clean() {
+function remove() {
   //  return del.sync([bases.dist]);
   return  (async () => {
-        const deletedPaths = await del([bases.dist], {dryRun: true});    
-        console.log('Files and directories that would be deleted:\n', deletedPaths.join('\n'));
+        // const deletedPaths = await del([bases.dist], {dryRun: true});    
+        gulp.src([bases.dist + "*"], {read: false}).pipe(clean());
+        console.log('Files and directories that would be deleted:\n', [bases.dist]);
     })();
 }
 
@@ -170,6 +171,7 @@ function browserSyncReload(done) {
 
 // Optimize Images
 function images() {
+
     return gulp
         .src([bases.app + "img/**/*"])
         .pipe(newer(bases.dist + "img"))
@@ -220,7 +222,8 @@ exports.css = css;
 exports.js = js;
 exports.pug = pugtohtml;
 // exports.jekyll = jekyll;
-exports.clean = clean;
+exports.copyFiles = copyFiles;
+exports.remove = remove;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;

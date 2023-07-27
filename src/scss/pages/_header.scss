@@ -1,5 +1,5 @@
 .site-header {
-    position:fixed;      
+    position:absolute;      
     width: 100%;     
     height: 45px;
     z-index: map-get($zindex, header);
@@ -11,15 +11,13 @@
     }
     @include mq(lg) {
         height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
-    .container-fluid{
+    .container{
         height: 100%;
         @include mq(lg){
             height: auto;
-        }
-        @include mq(xl){
-            padding-left: 3rem;
-            padding-right: 3rem;
         }
     }
   
@@ -27,8 +25,6 @@
         height: 100%;
     }
     
-
-
     .logo {     
         display: block;
         transition: all .5s;
@@ -44,45 +40,16 @@
             width: 200px;
         }
         @include mq(xxl) {
-            width: 223px;
+            width: 211px;
         }
      
-        // .logo_white{
-        //     display: block;
-        // }
-        // .logo_color{
-        //     display: none;
-        // }
     }
    
-    .top_col {       
-        .quick_list{
-            text-align: right;
-            @include reset-list();
-            display: none;
-            @include mq(lg){
-                display: block;
-            }
-            li{
-                display: inline-block;
-                a{
-                    color: #fff;
-                    font-size: rem(12);
-                    display: block;
-                    padding: .6rem 1.5rem;
-                    &:hover{
-                        color: $color-primary;
-                    }
-                }
-            }
-        }
-
-    }
     .mainav {
         @include reset-list();
         display: none;  
-        border-bottom: 1px #fff solid;     
-       
+        text-align: right;
+         
         @include mq(lg) {
             display: block;             
         }
@@ -92,19 +59,19 @@
             display: inline-block;
             position: relative;          
             @include mq(lg) {                  
-                margin-right: 2rem;    
+                margin-left: 2rem;    
             }
             @include mq(xl) {                  
-                margin-right: 2.6rem;        
+                margin-left: 2.6rem;        
             }
             @include mq(xxl) {                  
-                margin-right: 3.2rem;    
+                margin-left: 3.2rem;    
             }
             &>a {
                 display: block;             
                 position: relative;  
                 transition: all .3s;  
-                color: #fff;  
+           
                 @include mq(lg) {                  
                     padding: .6rem 0;    
                 }
@@ -433,71 +400,52 @@
         }
        
     }
-    &.fixheader {
+    // &.fixheader {
       
-        position: fixed;
-        left: 0;       
-        z-index: 8000;
-        background-color: #333;
+    //     position: fixed;
+    //     left: 0;       
+    //     z-index: 8000;
 
-        .logo{
-            .logo_white{
-                display: none;
-            }
-            .logo_color{
-                display: block;
-            }
-        }
-        .area{
-            border:1px $color-primary solid;           
-            color: $color-primary;
-        }
-        
-        .mainav {
-            border: none;
+    //     .logo{
+    //         .logo_white{
+    //             display: none;
+    //         }
+    //         .logo_color{
+    //             display: block;
+    //         }
+    //     }
+
+    //     .mainav {
+    //         border: none;
      
-        }
-        // .search{
-        //     @include mq(xxxl){
-        //         margin-bottom: .3rem;
-        //     }
-        // }
+    //     }
+    //     // .search{
+    //     //     @include mq(xxxl){
+    //     //         margin-bottom: .3rem;
+    //     //     }
+    //     // }
 
-        .lang-switcher{
+    //     .lang-switcher{
            
-            .current-lang{
-                color:$color-primary;        
-                .iconfont{              
-                    color:$color-primary;             
-                }      
-            }
-        }
+    //         .current-lang{
+    //             color:$color-primary;        
+    //             .iconfont{              
+    //                 color:$color-primary;             
+    //             }      
+    //         }
+    //     }
     
-        .loginReg {
-            border:1px #333 solid;
-            height: 30px;
-            line-height: 28px;
-            border-radius: 15px;
-            padding: 0 1rem;
-            color: #333;
-            a{
-                color:#333;
-                &:hover{
-                    color: $color-primary;
-                }
-            }
-        }
         
-        .one,
-        .two,
-        .three {
-            // background-color: $color-primary;
-        }
-        .menu-over {
-            top: 45px;
-            height: calc(110vh - 102px);
-        }
-    }
+    //     .one,
+    //     .two,
+    //     .three {
+    //         // background-color: $color-primary;
+    //     }
+    //     .menu-over {
+    //         top: 45px;
+    //         height: calc(110vh - 102px);
+    //     }
+    // }
 }
 
 .home-body {

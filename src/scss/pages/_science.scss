@@ -1,0 +1,43 @@
+.page-secience-s1{
+    .des{
+        max-width: 1290px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+}
+.page-secience-s2{
+    background-color: #F5F5F5;
+    .pic{
+        img{
+            width: 100%;
+        }
+    }
+    .txt{
+       
+        padding: 1rem;
+        @include mq(md){
+            padding: 3rem;
+        }
+        @include mq(xl){
+            padding: 3rem 5rem;
+        }
+        @include mq(xxl){
+            padding: 3rem 7rem;
+        }
+        @include mq(xxl){
+            padding: 3rem 9rem;
+        }
+        p{
+            text-align: justify;
+        }
+    }
+    .s2 {
+        .col-lg-6{
+            background-size: 100% 100%;
+        }
+        .txt{
+            color: #fff;
+            @include vertical-align(); 
+        }
+    }
+}

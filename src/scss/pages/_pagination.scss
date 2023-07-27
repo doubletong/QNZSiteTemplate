@@ -10,11 +10,11 @@
         a {
             display: block;
             line-height: 1;          
-            color: #ccc;
+            color: #999;
             margin: 0 .1rem;
          
             border-radius: 50%;
-            background-color: #fff;
+            background-color: #f7f7f7;
             text-align: center;
         
             width: 38px;
@@ -38,8 +38,7 @@
         }
         .prev,
         .next {       
-            text-align: center;  
-            border:1px #eee solid;     
+            text-align: center;           
             line-height: 36px;
         }
     }

@@ -1,68 +1,76 @@
 .page-products-s1 {  
-    .categories{
-        @include reset-list();
-        border-bottom: 1px $color-text solid;
-        display: inline-block;
-       
-        li{
-            display: inline-block;
-            margin-right: 1.5rem;
-            &:last-child{
-                margin-right: 0;
-            }
-            a{
-                display: block;
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-            &.active{
-                a{
-                    color: $color-primary;
-                }
-            }
-        }
-        
+    .des{
+        max-width: 1030px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
     }
+    
     
     
 }
 
 .page-products-s2{
-    .title-section{
-        h2{
-            font-weight: normal;
+    position: relative;
+    padding-top: 10rem;
+    padding-bottom: 20rem;
+    background-image: linear-gradient(0, #7b35a18e 0%, #fff 50%);
+    .container{
+        @include mq(xxl){
+            max-width: 1200px;
         }
     }
-    .products{
+  
+    
+    .pic {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        z-index: 100;
+        transform: translateX(-50%);
+    }
+    .list{
+        max-width: 380px;
         .item{
-            max-width: 400px;
-            margin: 0 auto;
-            .pic{
-                border-bottom: 1px #ddd solid;
-                margin-bottom: 1rem;
-                text-align: center;
-                @include mq(xxl){
-                    margin-bottom: 1.5rem;
-                }
-               
-                
+            margin-bottom: 8rem;
+            position: relative;
+            padding-left: 8rem;
+            min-height: 120px;
+            .icon{
+                position: absolute;
+                left: 0;
+                top: 0;
             }
-            .title{
-                font-weight: normal;
-                font-size: rem(20);
-                margin-bottom: 1rem;
-                @include mq(xxl){
-                    margin-bottom: 1.5rem;
+            .txt{
+                .title{
+                    @include fluid-type(18px, 24px, 320px, 1920px);
+                }
+                .des{
+                    font-size: rem(14);
                 }
             }
-            .des{
+            &:hover{
+                color: $color-primary;
+                .icon{
+                    border-radius: 50%;
+                    box-shadow: 0 0 12px rgba(0,0,0,.1);
+                }
+            }
+        }
+    }
+    .right_col{
 
-                dt{
-                    font-weight: normal;
-                    margin-bottom: .5rem;
+        .list{
+            margin: 0 0 0 auto;
+            .item{
+                padding-left: 0;
+                padding-right: 8rem;
+                .icon{
+                    right: 0;
+                    left: auto;
                 }
-                ul{
-                    @include reset-list();
+                .txt{
+                    text-align: right;
                 }
             }
         }

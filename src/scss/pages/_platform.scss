@@ -1,0 +1,47 @@
+.page-platform-s1{
+    background-color: #FAFAFA;
+    padding-bottom: 2rem;
+  
+    .container{
+        @include mq(xxl){
+            max-width: 1290px;
+        } 
+    }
+    .intro{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 6px;
+ 
+        padding: 7rem 0 7rem 56%;
+        .txt{
+            padding: 1rem 6rem 1rem 3rem;
+            color: #fff;
+            text-align: justify;
+        }
+       
+    }
+    
+}
+.page-platform-s2{
+    .box{
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 1rem;
+        @include mq(xxl){
+            padding: 2rem;
+        }
+        .title{
+            margin-bottom: .6rem;
+        }
+        figure{
+            img{
+                width: 100%;
+            }
+            figcaption{
+                margin-top: .6rem;
+            }
+        }
+    }
+
+}

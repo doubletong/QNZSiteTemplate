@@ -1,151 +1,148 @@
-// @font-face {
-//     font-family: "AlibabPuHuiTi";
-//     src: url("../fonts/Alibaba-PuHuiTi-Regular.ttf") format("truetype");
+@include font-face('YouSheBiaoTiHei', '../fonts/YouSheBiaoTiHei', $weight: 400, $style: null, $exts: ttf);
 
+// .container{
+//     @include mq(xxxl){
+//         max-width: 1550px;
+//     }
 // }
-// @font-face {
-//     font-family: "AlibabPuHuiTi";
-//     src: url("../fonts/Alibaba-PuHuiTi-Bold.ttf") format("truetype");
-//     font-weight: bold;
-// }
-// @font-face {
-//     font-family: "AlibabPuHuiTi";
-//     src: url("../fonts/Alibaba-PuHuiTi-Medium.ttf") format("truetype");
-//     font-weight: 500;
-// }
-
-// @font-face {
-//     font-family: "AlibabPuHuiTi";
-//     src: url("../fonts/Alibaba-PuHuiTi-Light.ttf") format("truetype");
-//     font-weight: 300;
-// }
-
-
-// @font-face {
-//     font-family: 'Source Han Sans SC';
-//     src: '../fonts/SourceHanSansSC-VF.otf.woff2' format('woff2-variations');
-//     font-weight: 125 950;
-//     font-stretch: 75% 125%;
-//    }
-
-//变量字体使用
-// @font-face {
-//     font-family: 'Source Sans';
-//     src: url('../fonts/SourceHanSansSC-VF.ttf') format("truetype-variations");
-//     font-weight: 1 999;
-// }
-
-h1,h2,h3,h4{    
-    color: $color-text-heading;
-    font-weight: bold;
-}
-
-.container{
-    @include mq(xxxl){
-        max-width: 1550px;
-    }
-}
 
 
 body {
     color: $color-text;
-    background-color: #fff;
-    // font-family:  "PingFang SC", "Microsoft YaHei", "Helvetica", "Helvetica Neue", "Arial", sans-serif;
-    font-family:  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",  Helvetica, Tahoma,"Source Sans", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    background: #fff;    
+    font-family: $font-family-default;
     font-size: 1rem;
     margin: 0 auto;
     line-height: 1.8;
     position: relative;
+    padding-top: 45px;
     @include mq(md) {
-        font-size: 1rem;   
+        font-size: 1rem; 
+        padding-top: 60px;  
     }
     @include mq(lg) {
         font-size: rem(14);    
+        padding-top: 0;  
     }
-    @include mq(xl) {
-        font-size: 1rem;    
+
+    @include mq(xxl) {
+        font-size: 1rem;
     }
- 
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: $color-primary;
     &:hover {
-        text-decoration: none;
-        color: $color-primary;
+        text-decoration: none;      
+        color: $color-secondary;        
     }
 }
 
 
 .title-section {   
-    padding-bottom: 1rem;
-    position: relative;
-    margin-bottom: 2rem;
+   
+    position: relative;  
     color:$color-text-heading;
-    h2 {     
-        text-transform: uppercase;  
-        font-weight: normal;
-        
+    margin-bottom: 1rem;
+    @include mq(xxl){
+        margin-bottom: 2rem;
     }
-    
+    .en{
+        color: $color-primary;
+        @include mq(xxxl){
+            font-size: rem(18);
+        }
+    }
+    h2 {       
+        position: relative;        
+    }
+    h3{
+        position: relative;
+        padding-bottom: 1rem;
+        &::after{
+            content: " ";
+            display: block;
+            width: 42px;
+            height: 2px;
+            background-color: $color-primary;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+        }
+    }
+    &.v1{
+        text-align: center;        
+    }
+    &.style2{
+        text-align: center;
+        h2{
+            &::after{   
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $color-primary;
+                
+            }
+        }
+    }
+    &.white{
+        color: #fff;
+        .en{
+            color: #fff;
+        }
+        h3{
+            color: #fff;
+            &::after{               
+                background-color: #fff;                
+            }
+        }
+    }
 }
 
 
 .banner {
     position: relative;
-    &::before{
-        position: absolute;
-        height: 207px;
-        background: linear-gradient( rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0)  100%);
-        content: " ";
-        display: block;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-    }
+    color: $color-text-heading;
     .bg{
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        object-position: center center;
-        @include mq(md){
-            height: 300px;
-        }
-        @include mq(lg){           
-            height: 100vh;
-            object-fit: cover;
-            object-position: center center;
-        }
-     
+        width: 100%;      
+        // object-fit: cover;
+        // object-position: center center;
+        // @include responsive-space(height,200, 500, 320, 1920);
+      
     }
     .txt{
         position: absolute;
         width: 100%;
         left: 0;
-        bottom: 0;      
-        z-index: 10;
-        
-        h1{
-            color: #fff;
+        top: 50%;      
+        z-index: 10;        
+        transform: translateY(-50%); 
+        text-align: center;
+        h1{     
             font-weight: normal;
+            font-family: 'YouSheBiaoTiHei';
+            &.white{
+                color: #fff;
+         
+            }
         }
-    }
-    
+       
+    }   
  
 }
 
 
 
 .site-path  {
-    background-color: #F2F3F5;
-    padding: .8rem 0;
-    color: #B8B8B8;
+    border-top: 1px #eee solid;  
+    padding-top: 1rem;
     ol.breadcrumb{
         @include reset-list();
         li{
             display: inline-block;
+            font-size: rem(14);
+            color: #999;
             &::after{
                 content: " / ";
             }
@@ -160,6 +157,7 @@ a {
     a{
         color: #B8B8B8;
     }
+    
 }
 
 
@@ -212,40 +210,10 @@ img {
     }
 }
 
-.text66 {
-    font-size: rem(36);
-    @include mq(sm) {
-        font-size: rem(42);
-    }
-    @include mq(md) {
-        font-size: rem(48);
-    }
-    @include mq(lg) {
-        font-size: rem(54);
-    }
-    @include mq(xl) {
-        font-size: rem(60);
-    }
-    @include mq(xxl) {
-        font-size: rem(66);
-    }
+.text72 {
+    @include fluid-type(24px, 72px, 320px, 1920px);
 }
 
-.text60 {
-    font-size: rem(20);
-    @include mq(md) {
-        font-size: rem(30);
-    }
-    @include mq(lg) {
-        font-size: rem(40);
-    }
-    @include mq(xl) {
-        font-size: rem(50);
-    }
-    @include mq(xxl) {
-        font-size: rem(60);
-    }
-}
 
 .text56 {
     font-size: rem(24);
@@ -284,51 +252,19 @@ img {
     }
 
 }
+.text48 {
+    @include fluid-type(30px, 48px, 320px, 1920px);
+}
+.text44 {
+    @include fluid-type(22px, 44px, 320px, 1920px);
+}
+
 .text40 {
-    font-size: rem(18);
-    @include mq(md) {
-        font-size: rem(22);
-    }
-    @include mq(lg) {
-        font-size: rem(28);
-    }
-    @include mq(xl) {
-        font-size: rem(34);
-    }
-    @include mq(xxl) {
-        font-size: rem(40);
-    }
+    @include fluid-type(22px, 40px, 320px, 1920px);
 }
 
-.text38 {
-    font-size: rem(22);
-    @include mq(md) {
-        font-size: rem(26);
-    }
-    @include mq(lg) {
-        font-size: rem(30);
-    }
-    @include mq(xl) {
-        font-size: rem(34);
-    }
-    @include mq(xxl) {
-        font-size: rem(38);
-    }
-}
-
-.text36 {
-   
-    font-size: rem(24);
-  
-    @include mq(lg) {
-        font-size: rem(28);
-    }
-    @include mq(xl) {
-        font-size: rem(32);
-    }
-    @include mq(xxl) {
-        font-size: rem(36);
-    }
+.text36 {   
+    @include fluid-type(18px, 36px, 320px, 1920px);
 }
 
 .text34 {
@@ -380,19 +316,7 @@ img {
 }
 
 .text28 {
-    font-size: rem(20);
-    @include mq(md) {
-        font-size: rem(22);
-    }
-    @include mq(lg) {
-        font-size: rem(24);
-    }
-    @include mq(xl) {
-        font-size: rem(26);
-    }
-    @include mq(xxl) {
-        font-size: rem(28);
-    }
+    @include fluid-type(20px, 28px, 320px, 1920px);
 }
 
 .text26 {
@@ -436,16 +360,7 @@ img {
 }
 
 .text20 {
-    font-size: rem(14);
-    @include mq(lg) {
-        font-size: rem(16);
-    }
-    @include mq(xl) {
-        font-size: rem(18);
-    }
-    @include mq(xxl) {
-        font-size: rem(20);
-    }
+    @include fluid-type(14px, 20px, 320px, 1920px);
 }
 
 .pt-media-15 {
@@ -497,19 +412,7 @@ img {
 }
 
 .pt-media-6 {
-    padding-top: 2rem;
-    @include mq(md) {
-        padding-top: 3rem;
-    }
-    @include mq(lg) {
-        padding-top: 4rem;
-    }
-    @include mq(xl) {
-        padding-top: 5rem;
-    }
-    @include mq(xxl) {
-        padding-top: 6rem;
-    }
+    @include responsive-space(padding-top,32, 96, 320, 1920);
 }
 
 .pt-media-5 {
@@ -524,6 +427,7 @@ img {
     @include mq(xxl) {
         padding-top: 5rem;
     }
+    
 }
 
 .pt-media-4 {
@@ -587,20 +491,7 @@ img {
 }
 
 .pb-media-6 {
-    padding-bottom: 2rem;
-   
-    @include mq(lg) {
-        padding-bottom: 3rem;
-    }
-    @include mq(xl) {
-        padding-bottom: 4rem;
-    }
-    @include mq(xxl) {
-        padding-bottom: 5rem;
-    }
-    @include mq(xxxl) {
-        padding-bottom: 6rem;
-    }
+    @include responsive-space(padding-bottom,32, 96, 320, 1920);
 }
 
 .pb-media-7 {
@@ -760,4 +651,24 @@ img {
     }
 }
 
+.page-nav{
+    background-color: #fff;
+    .wrap{
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    a{
+        display: inline-block;
+        padding: .5rem;
+        margin-right: 1rem;
+        @include mq(md){
+            padding: 1rem;
+            margin-right: 2rem;
+        }
+        &.active{
+            border-bottom: 1px $color-primary solid;
+            color: $color-primary;
+        }
+    }
+}
 
