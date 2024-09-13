@@ -1,8 +1,24 @@
 .site-footer { 
 
-    background-color: #fff;
+    background-color: #1F2632;
     position: relative;
-    
+    .left_col{
+        max-width: rem(385);
+        color: #FEFEFE;
+    }
+    .bot_logo {
+        width: rem(160);
+        margin-bottom: 2rem;
+    }
+    .company_info {
+        dd{
+            margin: 0;
+        }
+    }
+    a{
+        color: #fff;
+    }
+
     .menus{
         @include reset-list();      
         text-align: right;
@@ -13,7 +29,7 @@
             a{
              
                 display: block;               
-          
+                color: #8B8B8C;
                 &:hover{
                     text-decoration: underline;
                 }
@@ -38,25 +54,38 @@
     }
     
 }
+.right_col{
+    text-align: center;
+    width: 125px;
+    .qrcode{
+        background-color: #fff;
+        padding: .5rem .5rem .3rem;
+        border-radius: .5rem;
+        font-size: rem(12);
+    }
+}
 
 .toTop{
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    background-color: rgba(255,255,255,.2);
-    border-radius: 3px;
     display: block;
     text-align: center;
-    color: #fff;
-    @include mq(xxl){
-        width: 60px;
-        height: 60px;
-        line-height: 60px;
+    color: #EBEBEB;
+    margin-bottom: 6rem;
+    .icon{
+        display: block;
+        margin: 0 auto .5rem;
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        border-radius: 50%;
+        border: 2px #EBEBEB solid;
+        @include mq(xxl){
+            width: 60px;
+            height: 60px;
+            line-height: 55px;
+        }
+        .iconfont{
+            font-size: 1.5rem;
+        }
     }
-    .iconfont{
-        font-size: 1.25rem;
-    }
+   
 }

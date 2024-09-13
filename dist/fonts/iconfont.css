@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4683616 */
+  src: url('iconfont.eot?t=1726197706601'); /* IE9 */
+  src: url('iconfont.eot?t=1726197706601#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('iconfont.woff2?t=1726197706601') format('woff2'),
+       url('iconfont.woff?t=1726197706601') format('woff'),
+       url('iconfont.ttf?t=1726197706601') format('truetype'),
+       url('iconfont.svg?t=1726197706601#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-play:before {
+  content: "\e614";
+}
+
+.icon-sina:before {
+  content: "\e660";
+}
+
+.icon-zhuanli:before {
+  content: "\e616";
+}
+
+.icon-wechat-fill:before {
+  content: "\e883";
+}
+
+.icon-toutiao:before {
+  content: "\e641";
+}
+
+.icon-phone-call:before {
+  content: "\e661";
+}
+
+.icon-box:before {
+  content: "\e6a1";
+}
+
+.icon-users:before {
+  content: "\e6e3";
+}
+
+.icon-yonghuzu:before {
+  content: "\ed73";
+}
+
+.icon-arrow-right:before {
+  content: "\e82e";
+}
+
+.icon-up:before {
+  content: "\e65d";
+}
+
+.icon-douyin:before {
+  content: "\e6fc";
+}
+
+.icon-a-userset-line:before {
+  content: "\ea3c";
+}
+
+.icon-company:before {
+  content: "\e62b";
+}
+
+.icon-xiaohongshu:before {
+  content: "\e601";
+}
+
+.icon-bilibili:before {
+  content: "\e648";
+}
+
